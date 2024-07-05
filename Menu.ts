@@ -2,6 +2,7 @@
 import { colors } from './src/util/Colors';
 import { Conta } from "./src/model/Conta";
 import { ContaCorrente } from "./src/model/ContaCorrente";
+import { ContaPoupanca } from "./src/model/ContaPoupanca";
 
 export function main() {
 
@@ -58,6 +59,14 @@ export function main() {
     cc2.depositar(3000.99)
     cc2.visualizar();
 
+    // Objeto da Classe ContaPoupanca (teste)
+    const contapoupanca: ContaPoupanca = new ContaPoupanca(3, 123, 2, "Victor", 1000, 10);
+    contapoupanca.visualizar();
+    contapoupanca.sacar(200);
+    contapoupanca.visualizar();
+    contapoupanca.depositar(1000);
+    contapoupanca.visualizar();
+    
     while (true) {
 
         console.log(colors.bg.black, colors.fg.green,
