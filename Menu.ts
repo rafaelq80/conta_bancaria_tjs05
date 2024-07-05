@@ -1,47 +1,11 @@
 ﻿import readlinesync = require("readline-sync");
-import { colors } from './src/util/Colors';
-import { Conta } from "./src/model/Conta";
 import { ContaCorrente } from "./src/model/ContaCorrente";
 import { ContaPoupanca } from "./src/model/ContaPoupanca";
+import { colors } from './src/util/Colors';
 
 export function main() {
 
     let opcao: number;
-
-    //Novas Instâncias da Classe Conta (Objetos)
-    const c1: Conta = new Conta(1, 1234, 1, 'Júlia Castro', 800000.00);
-    const c2: Conta = new Conta(2, 1234, 2, 'Marcella Sanches', 600000.00);
-
-    // Visualizando os dados da Conta c1
-    c1.visualizar();
-
-    // Visualizando os dados da Conta c2
-    c2.visualizar();
-
-    // Visualizando o Saldo da Conta c1
-    console.log(`\nO Saldo da conta 01 é: ${c1.saldo}`);
-
-    // Alterando o Saldo da Conta c2
-    c2.saldo = 900000.00;
-
-    // Visualizando o Saldo da Conta c2, depois de atualizar o valor
-    console.log(`\nO Saldo da conta 02 é: ${c2.saldo}`);
-
-    // Saque nas Contas
-    console.log(`\nSacar 100.00 Reais da Conta C1: ${c1.sacar(100)}`); // true
-    c1.visualizar();
-
-    console.log(`\nSacar 1000000.00 Reais da Conta C2: ${c2.sacar(1000000)}`); // false
-    c2.visualizar();
-
-    // Depósito nas Contas
-    console.log(`\nDepositar 200000.00 Reais da Conta C1: `); 
-    c1.depositar(200000)
-    c1.visualizar();
-
-    console.log(`\nDepositar 300000.25 Reais da Conta C2: `); 
-    c2.depositar(300000.25)
-    c2.visualizar();
 
     //Novas Instâncias da Classe ContaCorrente (Objetos)
     const cc1: ContaCorrente = new ContaCorrente(3, 1234, 1, 'Amanda Magro', 1000000.00, 100000.00);

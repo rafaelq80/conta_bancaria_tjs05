@@ -2,6 +2,7 @@
 
 export class ContaCorrente extends Conta{
     
+   
     private _limite: number;
 
 	constructor(numero: number, agencia: number, tipo: number, titular: string, 
@@ -35,4 +36,5 @@ export class ContaCorrente extends Conta{
         super.visualizar();
         console.log(`Limite: ${this._limite}`);
     }
+
 }
