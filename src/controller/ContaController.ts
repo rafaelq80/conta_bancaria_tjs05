@@ -12,7 +12,7 @@ export class ContaController implements ContaRepository {
     procurarPorTitular(titular: string): void {
        
         let buscaPorTitular = this.listaContas.filter( c => 
-            c.titular.includes(titular)
+            c.titular.toUpperCase().includes(titular.toUpperCase())
        );
 
        buscaPorTitular.forEach( conta => conta.visualizar());
