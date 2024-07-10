@@ -52,7 +52,9 @@ export class ContaController implements ContaRepository {
     sacar(numero: number, valor: number): void {
         let buscaConta = this.buscarNoArray(numero);
 
+        
         if (buscaConta !== null) {
+
             if (buscaConta.sacar(valor) === true)
                 console.log("\nO Saque foi efetuado com sucesso!")
         } else
