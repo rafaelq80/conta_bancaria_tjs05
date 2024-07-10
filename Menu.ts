@@ -46,7 +46,7 @@ export function main() {
         console.log("Entre com a opção desejada: ");
         opcao = readlinesync.questionInt("");
 
-        if (opcao == 9) {
+        if (opcao === 0) {
             console.log(colors.fg.greenstrong,
                 "\nBanco do Brazil com Z - O seu Futuro começa aqui!");
             sobre();
@@ -207,6 +207,17 @@ export function main() {
                 contas.transferir(numero, numeroDestino, valor);
 
                 keyPress()
+                break;
+                case 9:
+                    console.log(colors.fg.whitestrong,
+                        "\n\nConsultar conta por titular\n\n", colors.reset);
+    
+                        console.log("Digite o Nome do Titular: ")
+                        titular = readlinesync.question("")
+    
+                        contas.procurarPorTitular(titular);
+    
+                        keyPress();
                 break;
             default:
                 console.log(colors.fg.whitestrong,

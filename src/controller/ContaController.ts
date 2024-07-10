@@ -2,12 +2,22 @@
 import { ContaRepository } from "../repository/ContaRepository";
 
 export class ContaController implements ContaRepository {
-
+   
     // Coleção Array que vai armazenar os Objetos Conta
     private listaContas: Array<Conta> = new Array<Conta>();
 
     // Controlar os Números das Contas
     public numero: number = 0;
+
+    procurarPorTitular(titular: string): void {
+       
+        let buscaPorTitular = this.listaContas.filter( c => 
+            c.titular.includes(titular)
+       );
+
+       buscaPorTitular.forEach( conta => conta.visualizar());
+       
+    }
 
     procurarPorNumero(numero: number): void {
         let buscaConta = this.buscarNoArray(numero);
@@ -51,7 +61,6 @@ export class ContaController implements ContaRepository {
 
     sacar(numero: number, valor: number): void {
         let buscaConta = this.buscarNoArray(numero);
-
         
         if (buscaConta !== null) {
 
